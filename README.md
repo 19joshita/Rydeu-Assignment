@@ -1,50 +1,114 @@
-# Welcome to your Expo app 👋
+# 🛵 Rydeu-Style Scheduling App (React Native + Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A **React Native Expo app** that implements a **custom 6-month calendar with date and time picker**, user authentication, and logout functionality. The design and flow are inspired by the **Rydeu app**, focusing on **real-world scheduling UX**.
 
-## Get started
+Built with **TypeScript**, **Redux Toolkit**, **Moment.js**, and **Expo Router**.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🌟 Features
 
-2. Start the app
+### 1. Authentication
 
-   ```bash
-   npx expo start
-   ```
+- Login screen with **email & password**.
+- Authentication managed via **Redux Toolkit**.
+- Redirects first-time users to login.
+- After login, navigates to Home screen.
 
-In the output, you'll find options to open the app in a
+### 2. Home Screen
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Header** displays user information (email/name).
+- **Custom 6-month calendar** built with **Moment.js**.
+- **Date selection:** tap a date to select.
+- **Time selection:** appears dynamically after selecting a date.
+- **Summary:** shows selected date & time clearly.
+- **Logout:** clears auth state and redirects to login.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 3. State Management
 
-## Get a fresh project
+- **Redux Toolkit** manages global state.
+- **Auth Slice:** handles login/logout and user info.
+- **Calendar Slice:** handles selected date and time.
 
-When you're ready, run:
+### 4. UI & UX
+
+- Horizontal **scrollable calendar** for 6 months.
+- Time slots appear **after selecting a date**.
+- Selected date and time displayed in a **card view**.
+- Responsive design works on **iOS and Android**.
+- Clean card-based layout with shadows, rounded corners, and consistent spacing.
+
+---
+
+## 🗂 Project Structure
+
+app/
+├── \_layout.tsx # Root layout (Redux + Stack navigation)
+├── index.tsx # Auth redirect / splash
+├── login.tsx # Login screen
+├── home.tsx # Home screen
+
+src/
+├── redux/
+│ ├── store.ts
+│ ├── authSlice.ts
+│ └── calendarSlice.ts
+
+├── components/
+│ ├── Header.tsx
+│ └── Calendar/
+│ ├── Calendar.tsx
+│ ├── Month.tsx
+
+---
+
+## 🛠 Technology Stack
+
+- **React Native** (Expo managed workflow)
+- **TypeScript** (type safety)
+- **Redux Toolkit** (state management)
+- **Expo Router** (navigation)
+- **Moment.js** (date & time handling)
+- **Axios** (API requests)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/yourusername/rydeu-scheduling-app.git
+cd rydeu-scheduling-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🛠 Technology Stack
 
-To learn more about developing your project with Expo, look at the following resources:
+- **React Native** (Expo managed workflow)
+- **TypeScript** (type safety)
+- **Redux Toolkit** (state management)
+- **Expo Router** (navigation)
+- **Moment.js** (date & time handling)
+- **Axios** (API requests)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 🚀 Getting Started
 
-Join our community of developers creating universal apps.
+### 1. Clone the repository
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+git clone https://github.com/yourusername/rydeu-scheduling-app.git
+cd rydeu-scheduling-app
+npx expo start
+POST https://new-api-staging.rydeu.com/login
+Content-Type: application/json
+
+{
+  "email": "rydeu@email10p.org",
+  "password": "123456",
+  "type": "customer"
+}
+```
