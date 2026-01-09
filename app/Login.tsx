@@ -74,7 +74,6 @@ export default function Login() {
           <Text style={styles.tagline}>Move smarter, faster</Text>
         </View>
 
-        {/* Content */}
         <View style={styles.content}>
           <View style={styles.card}>
             <Text style={styles.title}>Login</Text>
@@ -94,7 +93,6 @@ export default function Login() {
                 touched,
               }) => (
                 <>
-                  {/* Email */}
                   <View style={styles.inputWrapper}>
                     <Text style={styles.label}>Email</Text>
                     <TextInput
@@ -112,7 +110,6 @@ export default function Login() {
                     )}
                   </View>
 
-                  {/* Password */}
                   <View style={styles.inputWrapper}>
                     <Text style={styles.label}>Password</Text>
                     <View style={styles.passwordContainer}>
@@ -143,7 +140,6 @@ export default function Login() {
                     )}
                   </View>
 
-                  {/* Button */}
                   <TouchableOpacity
                     style={[styles.button, loading && styles.disabled]}
                     onPress={handleSubmit as any}

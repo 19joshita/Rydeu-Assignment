@@ -1,4 +1,3 @@
-// CustomCalendar.tsx
 import { setDate } from "@/src/redux/calendarSlice";
 import { RootState } from "@/src/redux/store";
 import moment from "moment";

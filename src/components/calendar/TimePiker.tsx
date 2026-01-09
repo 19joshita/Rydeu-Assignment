@@ -23,8 +23,6 @@ export default function TimePicker({ visible, setVisible }: Props) {
 
   const [hour, setHour] = useState("13");
   const [minute, setMinute] = useState("00");
-
-  /** Hours: 01 → 23 (NO 00) */
   const hours = Array.from({ length: 23 }, (_, i) =>
     String(i + 1).padStart(2, "0")
   );
@@ -33,13 +31,11 @@ export default function TimePicker({ visible, setVisible }: Props) {
     String(i).padStart(2, "0")
   );
 
-  /** AM / PM logic */
   const amPm = useMemo(() => {
     const h = parseInt(hour, 10);
     return h < 12 ? "AM" : "PM";
   }, [hour]);
 
-  /** Convert to 12-hour for display */
   const displayHour = useMemo(() => {
     const h = parseInt(hour, 10);
     const converted = h % 12 === 0 ? 12 : h % 12;
